@@ -14,7 +14,7 @@ import {
   useTransform,
 } from "motion/react";
 import { usePathname } from "next/navigation";
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const; // smooth "out-expo"-like curve
 
