@@ -29,8 +29,8 @@ export function PlanCard({ plan, baseline, href, preview = false }: { plan: Plan
   const ctaClass = `${plan.highlight ? "btn-primary" : "btn-ghost"} mt-8 w-full`;
   return (
     <div
-      className={`relative flex h-full flex-col rounded-3xl p-[1px] ${
-        plan.highlight ? "bg-gradient-to-b from-brand/70 via-brand/20 to-transparent" : "bg-fg/[0.06]"
+      className={`relative flex h-full flex-col rounded-3xl p-[1px] transition duration-300 ${
+        plan.highlight ? "border-gradient-pan" : "bg-fg/[0.06]"
       }`}
     >
       <div className="relative flex h-full flex-col rounded-[calc(1.5rem-1px)] bg-ink-900 p-6 sm:p-7">
