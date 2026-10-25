@@ -90,7 +90,7 @@ export default async function Home() {
           </p>
           <h1 className="mt-6 text-[2.6rem] leading-[1.04] font-extrabold tracking-tight sm:text-6xl">
             <TextReveal text="Trade smarter." className="block" delay={0.15} />
-            <TextReveal text="Trade with precision." className="block text-shimmer" delay={0.45} stagger={0.09} />
+            <TextReveal text="Trade with precision." className="block" wordClassName="text-shimmer" delay={0.45} stagger={0.09} />
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-300">
             TradePilot is an Expert Advisor for MetaTrader 5. Every subscriber gets a personally compiled copy, licensed
