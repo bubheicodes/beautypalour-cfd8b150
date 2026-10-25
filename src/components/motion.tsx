@@ -226,6 +226,4 @@ export function Float({ children, className }: { children: ReactNode; className?
   );
 }
 
-import { useEffect } from "react";
-
 export { motion };
