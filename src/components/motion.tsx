@@ -63,8 +63,22 @@ export function StaggerItem({ children, className }: { children: ReactNode; clas
   );
 }
 
-/** Reveals a headline word by word, with a soft blur settling into place. */
-export function TextReveal({ text, className, delay = 0, stagger = 0.07 }: { text: string; className?: string; delay?: number; stagger?: number }) {
+/** Reveals a headline word by word, with a soft blur settling into place.
+ *  Gradient text must go on `wordClassName` — transformed children break
+ *  background-clip:text when the gradient sits on the wrapper. */
+export function TextReveal({
+  text,
+  className,
+  wordClassName,
+  delay = 0,
+  stagger = 0.07,
+}: {
+  text: string;
+  className?: string;
+  wordClassName?: string;
+  delay?: number;
+  stagger?: number;
+}) {
   const reduce = useReducedMotion();
   const words = text.split(" ");
   if (reduce) return <span className={className}>{text}</span>;
@@ -80,7 +94,7 @@ export function TextReveal({ text, className, delay = 0, stagger = 0.07 }: { tex
         <motion.span
           key={i}
           aria-hidden
-          className="inline-block will-change-[transform,filter]"
+          className={`inline-block will-change-[transform,filter] ${wordClassName ?? ""}`}
           variants={{
             hidden: { opacity: 0, y: "0.65em", filter: "blur(8px)" },
             show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.7, ease: EASE } },
